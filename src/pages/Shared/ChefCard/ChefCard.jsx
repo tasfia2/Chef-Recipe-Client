@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Card, Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import LazyLoad from "react-lazy-load";
-import { BsFillHeartFill } from "react-icons/bs";
+import {  } from "react-icons/bs";
 
 const ChefCard = () => {
   const [chefs, setChefs] = useState([]);
@@ -11,7 +11,7 @@ const ChefCard = () => {
 
   useEffect(() => {
     // Fetch chefs data from API and set it to state
-    fetch("https://assignment-10-server-one-kappa.vercel.app/cuisine")
+    fetch("https://assignment-10-server-tasfia2.vercel.app/fakeData")
       .then((response) => response.json())
       .then((data) => setChefs(data));
   }, []);
@@ -19,8 +19,8 @@ const ChefCard = () => {
   return (
     <div>
       <div className="container mt-5">
-        <h2 style={{ color: "#ac2b31" }} className="text-center mb-4 ">
-          Our Chefs
+        <h2 className="text-dark fst-italic text-center mb-4 ">
+          Meet Our Cooks
         </h2>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
           {chefs.map((chef) => (
@@ -42,11 +42,11 @@ const ChefCard = () => {
                     <br />
                     <strong>Recipes:</strong> {chef.recipes}
                     <br />
-                    <strong><BsFillHeartFill className="text-danger me-2"></BsFillHeartFill></strong> {chef.likes}
+                    <strong>Likes:</strong> {chef.likes}
                   </Card.Text>
                   <Button
                     onClick={() => navigate(`ChefRecipes/${chef.id}`)}
-                    variant="info"
+                    className="bg-warning border border-0"
                   >
                     View Recipes
                   </Button>

@@ -4,27 +4,23 @@ import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 const Footer = () => {
   return (
 
-    <footer className="mt-5"  style={{ backgroundColor: "#870615" }}>
+    <footer className="mt-5 bg-dark">
     <div className="container py-4 ">
       <div className="row">
         <div className="col-md-4 text-white">
-          <h4 style={{ fontStyle: "italic" }} className="fs-5">
-            SaffronSpice
+          <h4  className="fs-5 fst-italic">
+          Gusto Italiano
           </h4>
           <p className="">
-            Our passion is a contemporary restaurant offering dining
-            experiences to satisfy all aspects of fine cuisine: Food
-            selection, service, ambience and atmosphere. Our menu reflects the
-            diversity of India, steeped in the classics while offering deft
-            touches of modernity. <br /> Read more...
+          Gusto Italiano is a traditional Italian restaurant that is dedicated to serving authentic Italian cuisine made from the freshest and highest quality ingredients. The restaurant prides itself on its warm and inviting atmosphere, where guests can enjoy an unforgettable dining experience with family and friends.
           </p>
         </div>
         <div className="col-md-4 text-white">
           <h5 className="mb-3">Contact Us</h5>
-          <p>123 Main St</p>
-          <p>Anytown, USA 12345</p>
+          <p>343 Main St</p>
+          <p>Downtown, Italiano 12345</p>
           <p>Phone: (555) 555-5555</p>
-          <p>Email: info@saffronspice.com</p>
+          <p>Email: gustoitaliano@.com</p>
         </div>
         <div className="col-md-4 text-right text-white">
           <p className="fs-5">Follow Us</p>
@@ -42,8 +38,6 @@ const Footer = () => {
         </div>
       </div>
     </div>
-    <hr />
-      <p className="text-center text-secondary pb-3">All rights reserved to Saffron Spice. Powered by MIN</p>
   </footer>
 
   );

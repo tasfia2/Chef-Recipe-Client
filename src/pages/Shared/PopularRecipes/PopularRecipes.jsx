@@ -1,99 +1,77 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "react-bootstrap";
-import {  FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { Button, Card } from "react-bootstrap";
+
+import { Col, Row} from 'react-bootstrap';
 
 const PopularRecipes = () => {
   return (
     <div className="container mt-5">
-      <h3 style={{ color: "#ac2b31" }} className="mt-5">Popular Recipes</h3>
-      <hr style={{ color: "#ac2b31" }} className="w-50 " />
+      <h3 className="text-dark fst-italic text-center mt-5 mb-5 ">
+        Editor's Choice
+      </h3>
 
-       <div   className="col mt-4 ">
-        <div className="col-md-4 mb-4">
-          <div className="card h-100">
-            <div className="row no-gutters">
-              <div className="col-md-4">
-                <img 
-                  className="card-img"
-                  src="https://images.immediate.co.uk/production/volatile/sites/30/2021/02/butter-chicken-ac2ff98.jpg?quality=90&webp=true&resize=440,400"
-                  alt="Butter Chicken"
-                />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">Butter Chicken</h5>
-                  <p className="card-text text-secondary">
-                    It is a type of curry made from chicken with a spiced tomato
-                    and butter (makhan) sauce.
-                  </p>
-                  <div className="text-warning">
-                  <FaStar></FaStar>
-                  <FaStar></FaStar>
-                  <FaStar></FaStar>
-                  <FaStarHalfAlt></FaStarHalfAlt>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 mb-4">
-          <div className="card h-100">
-            <div className="row no-gutters">
-              <div className="col-md-4">
-                <img
-                  className="card-img"
-                  src="https://www.funfoodfrolic.com/wp-content/uploads/2023/04/Dal-Makhani-Blog.jpg"
-                  alt="Dal Makhani"
-                />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">Dal Makhani</h5>
-                  <p className="card-text text-secondary">
-                    Dal Makhani is one of the most popular lentil recipes made
-                    with Whole Black Lentils and Kidney Beans.
-                  </p>
-                  <div className="text-warning">
-                  <FaStar></FaStar>
-                  <FaStar></FaStar>
-                  <FaStarHalfAlt></FaStarHalfAlt>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 mb-4">
-          <div className="card h-100">
-            <div className="row no-gutters">
-              <div className="col-md-4">
-                <img
-                  className="card-img"
-                  src="https://assets.bonappetit.com/photos/5b69f163d3d14670539a2174/4:3/w_3552,h_2664,c_limit/ba-tikka-masala-2.jpg"
-                  alt="Chicken Tikka Masala"
-                />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">Chicken Tikka Masala</h5>
-                  <p className="card-text text-secondary">
-                    Consisting of marinated boneless chicken pieces that are
-                    traditionally cooked in a tandoor.
-                  </p>
-                  <div className="text-warning">
-                  <FaStar></FaStar>
-                  <FaStar></FaStar>
-                  <FaStar></FaStar>
-                  <FaStar></FaStar>
-                  <FaStarHalfAlt></FaStarHalfAlt>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
+      <Row xs={1} md={2} lg={4} className="g-4">
+        <Col>
+          <Card>
+            <Card.Img
+              variant="top"
+              src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371597326801.jpeg"
+            />
+            <Card.Body>
+              <Card.Title>Tiramisu</Card.Title>
+              <Card.Text>
+                Mix mascarpone cheese with sugar. Dip ladyfingers in coffee and
+                layer with mascarpone mixture.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Img
+              variant="top"
+              src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2004/4/21/1/ei1c07_lemon_spaghetti_1.jpg.rend.hgtvcom.616.462.suffix/1633978231794.jpeg"
+            />
+            <Card.Body>
+              <Card.Title>Lemon spaghetti</Card.Title>
+              <Card.Text>
+                Cook spaghetti in salted water. In a pan, sauté garlic in olive
+                oil. Add lemon zest and juice.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Img
+              variant="top"
+              src="https://www.seriouseats.com/thmb/kdZeXEHT-4md2zXI9b1WaADG9x4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-cacciatore-red-peppers-recipe-hero-01_1-84bab1cbc3b84849960b4d3d61d017b5.JPG"
+            />
+            <Card.Body>
+              <Card.Title>Chicken cacciatore</Card.Title>
+              <Card.Text>
+                Season chicken thighs and brown in a pan. Sauté onions, bell
+                peppers, and mushrooms.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Img
+              variant="top"
+              src="https://www.kyleecooks.com/wp-content/uploads/2022/06/Lemon-Ricotta-Pancakes-3.jpg"
+            />
+            <Card.Body>
+              <Card.Title>lemon pancakes</Card.Title>
+              <Card.Text>
+                Mix flour, sugar, baking powder, and salt. In another bowl, mix
+                ricotta cheese, lemon zest and juice, egg, and milk.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </div>
   );
 };

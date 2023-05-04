@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             {
                 path: 'ChefRecipes/:ChefId',
                 element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
-                loader: ({params}) => fetch(`https://assignment-10-server-one-kappa.vercel.app/cuisine/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-10-server-tasfia2.vercel.app/fakeData/${params.id}`)
               },
             {
                 path: 'blogs',

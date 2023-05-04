@@ -16,7 +16,7 @@ const ChefRecipes = () => {
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
-    fetch("https://assignment-10-server-one-kappa.vercel.app/cuisine")
+    fetch("https://assignment-10-server-tasfia2.vercel.app/fakeData")
       .then((response) => response.json())
       .then((data) => {
         const chef = data.find((job) => job.id === ChefId);
@@ -41,16 +41,11 @@ const ChefRecipes = () => {
         </div>
       ) : (
         <div className="container mt-5">
-          <div className="row md:py-5">
+          <div className="row md:py-5 d-flex align-items-center">
             <div className="col-12 col-md-6  sm-12 ,md:mt-5 ">
-              <div style={{ color: "#ac2b31" }}>
-                <h5 className="">Meet</h5>
-                <hr className="w-50 " />
-                <h2 className=" fs-2 fst-italic">{chefData?.name}</h2>
-                <hr className="w-50 " />
-              </div>
+              <h2 className=" fs-2 fst-italic">{chefData?.name}</h2>
               <p className="fw-light">{chefData?.bio}</p>
-              <p className="fw-light"><BsFillHeartFill className="text-danger me-2"></BsFillHeartFill>{chefData?.likes}</p>
+              <p className="fw-light">Likes:{chefData?.likes}</p>
               <p className="fw-light">
                 Number of Recipes: {chefData?.recipesList.length}
               </p>
@@ -62,7 +57,7 @@ const ChefRecipes = () => {
             <div className="col-12 col-md-6 sm-12 ms-6">
               <LazyLoad offsetVertical={500} debounce={false}>
                 <img
-                  className="img-fluid rounded-4 "
+                  className="img-fluid w-75 rounded-2"
                   src={chefData?.image}
                   loading="lazy"
                   alt=""
@@ -72,8 +67,9 @@ const ChefRecipes = () => {
           </div>
 
           <div>
-          <h3 className="mt-5">Recipes</h3>
-          <hr style={{ color: "#ac2b31" }} className="w-50 " />
+          <h3 className="mt-5 fst-italic">Popular Recipes</h3>
+          <hr className="w-25 fw-bold text-warning" />
+          <hr className="w-50 fw-bold text-warning" />   
           <Row xs={1} md={2} lg={3} className="g-4 ">
             {chefData?.recipesList.slice(0, 3).map((recipe) => (
               <Col key={recipe.name}>
@@ -95,9 +91,7 @@ const ChefRecipes = () => {
                       </div>
 
                       <div className=" d-flex align-items-center gap-2">
-                        <span className="text-warning">
-                          <FaStar></FaStar> 
-                          <FaStar></FaStar>
+                        <span> Ratings
                           </span>
 
                            {recipe.rating}
@@ -107,7 +101,7 @@ const ChefRecipes = () => {
                     </Card.Text>
 
                     <Button
-                      variant="primary"
+                      className="bg-warning border border-0"
                       onClick={() => handleFavoriteClick(recipe.name)}
                       disabled={favorites.includes(recipe.name)}
                     >
